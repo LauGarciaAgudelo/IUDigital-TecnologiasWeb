@@ -2,13 +2,11 @@
 const express = require("express");
 const cors = require("cors");
 
-const tipoProyectoRoutes = require(
-  "./routes/tipoProyecto.routes"
-);
+const tipoProyectoRoutes = require("./routes/tipoProyecto.routes");
 
-const clienteRoutes = require(
-  "./routes/cliente.routes"
-);
+const clienteRoutes = require("./routes/cliente.routes");
+
+const universidadRoutes = require("./routes/universidad.routes");
 
 const app = express();
 
@@ -27,5 +25,6 @@ app.get("/", (req, res) => {
 // Rutas de los módulos
 app.use("/api/tipos-proyecto", tipoProyectoRoutes);
 app.use("/api/clientes", clienteRoutes);
+app.use("/api/universidades", universidadRoutes);
 
 module.exports = app;
