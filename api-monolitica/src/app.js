@@ -6,6 +6,10 @@ const tipoProyectoRoutes = require(
   "./routes/tipoProyecto.routes"
 );
 
+const clienteRoutes = require(
+  "./routes/cliente.routes"
+);
+
 const app = express();
 
 // Middleware
@@ -22,5 +26,6 @@ app.get("/", (req, res) => {
 
 // Rutas de los módulos
 app.use("/api/tipos-proyecto", tipoProyectoRoutes);
+app.use("/api/clientes", clienteRoutes);
 
 module.exports = app;
