@@ -1,5 +1,10 @@
+
 const express = require("express");
 const cors = require("cors");
+
+const tipoProyectoRoutes = require(
+  "./routes/tipoProyecto.routes"
+);
 
 const app = express();
 
@@ -7,12 +12,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Ruta inicial para verificar la API
+// Ruta principal
 app.get("/", (req, res) => {
   res.status(200).json({
     mensaje: "API REST IUDigital funcionando correctamente",
     proyecto: "Tecnologias Web"
   });
 });
+
+// Rutas de los módulos
+app.use("/api/tipos-proyecto", tipoProyectoRoutes);
 
 module.exports = app;
